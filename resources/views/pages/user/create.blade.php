@@ -36,21 +36,21 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
                             <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Masukkan Nama" required />
+                                placeholder="Masukkan Nama" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                             <input type="email" name="email"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Email" required />
+                                placeholder="Masukkan Email" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="password"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                             <input type="password" name="password"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Password" required />
+                                placeholder="Masukkan Password" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="password_confirmation"
@@ -58,7 +58,7 @@
                             Password</label>
                             <input type="password" name="password_confirmation"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Konfirmasi Password" required />
+                                placeholder="Masukkan Konfirmasi Password" required autocomplete="off"/>
                         </div>
                         <button type="submit"
                             class="mt-4 text-white bg-blue-950 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center ">Submit</button>

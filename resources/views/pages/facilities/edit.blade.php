@@ -3,12 +3,12 @@
         <div class="flex justify-between">
             <div>
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Halaman Tambah Buku
+                    Halaman Edit Facilities
                 </h2>
-                <div class="text-sm text-gray-500">Halaman untuk menambahkan Data Buku</div>
+                <div class="text-sm text-gray-500">Halaman untuk mengedit Data Facilities</div>
             </div>
             <div>
-                <a href="{{ route('book.index') }}"
+                <a href="{{ route('facilities.index') }}"
                     class="bg-blue-950 text-white rounded-md py-2 px-4 text-sm">Kembali</a>
             </div>
         </div>
@@ -29,40 +29,24 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <form action="{{ route('book.store') }}" method="POST" class="max-w-sm mx-auto">
+                    <form action="{{ route('facilities.update', $facilities->id) }}" method="POST" class="max-w-sm mx-auto">
                         @csrf
+                        @method('PUT')
                         <div class="mb-5">
                             <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                            <input type="text" name="title"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                            <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Masukkan Title" required autocomplete="off"/>
+                                placeholder="Masukkan Name" required autocomplete="off"/>
                         </div>
 
                         <div class="mb-5">
-                            <label for="name"
+                            <label for="quantity"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                            <input type="text" name="description"
+                            <input type="text" name="quantity"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Masukkan Description" required autocomplete="off"/>
+                                placeholder="Masukkan Quantity" required autocomplete="off"/>
                         </div>
-
-                        <div class="mb-5">
-                            <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
-                            <input type="text" name="year"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Masukkan Tahun" required autocomplete="off"/>
-                        </div>
-
-                        <div class="mb-5">
-                            <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Publisher</label>
-                            <input type="text" name="publisher"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Masukkan publisher" required autocomplete="off"/>
-                        </div>
-
                         <button type="submit"
                             class="mt-4 text-white bg-blue-950 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center ">Submit</button>
                     </form>

@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FacilitiesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,6 +39,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/member/{member}/edit', [MemberController::class, 'edit'])->name('member.edit');
     Route::put('/member/{member}/edit', [MemberController::class, 'update'])->name('member.update');
     Route::delete('/member/{member}', [MemberController::class, 'destroy'])->name('member.destroy');
+
+    // Route Facilities
+    Route::get('/facilities', [FacilitiesController::class, 'index'])->name('facilities.index');
+    Route::get('/facilities/create', [FacilitiesController::class, 'create'])->name('facilities.create');
+    Route::post('/facilities', [FacilitiesController::class, 'store'])->name('facilities.store');
+    Route::get('/facilities/{facilities}/edit', [FacilitiesController::class, 'edit'])->name('facilities.edit');
+    Route::put('/facilities/{facilities}/edit', [FacilitiesController::class, 'update'])->name('facilities.update');
+    Route::delete('/facilities/{facilities}', [FacilitiesController::class, 'destroy'])->name('facilities.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

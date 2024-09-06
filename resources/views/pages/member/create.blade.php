@@ -36,35 +36,35 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                             <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Masukkan Nama" required />
+                                placeholder="Masukkan Nama" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                             <input type="email" name="email"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Email" required />
+                                placeholder="Masukkan Email" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="phone"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
                             <input type="text" name="phone"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Number Phone" required />
+                                placeholder="Masukkan Number Phone" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="gender"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
                             <input type="text" name="gender"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Gender" required />
+                                placeholder="Masukkan Gender" required autocomplete="off"/>
                         </div>
                         <div class="mt-5">
                             <label for="address"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
                             <input type="text" name="address"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                placeholder="Masukkan Address" required />
+                                placeholder="Masukkan Address" required autocomplete="off"/>
                         </div>
                         <button type="submit"
                             class="mt-4 text-white bg-blue-950 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center ">Submit</button>
