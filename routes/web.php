@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
@@ -29,6 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/book/{book}/edit', [BookController::class, 'edit'])->name('book.edit');
     Route::put('/book/{book}/edit', [BookController::class, 'update'])->name('book.update');
     Route::delete('/book/{book}', [BookController::class, 'destroy'])->name('book.destroy');
+
+    // Route Members
+    Route::get('/member', [MemberController::class, 'index'])->name('member.index');
+    Route::get('/member/create', [MemberController::class, 'create'])->name('member.create');
+    Route::post('/member', [MemberController::class, 'store'])->name('member.store');
+    Route::get('/member/{member}/edit', [MemberController::class, 'edit'])->name('member.edit');
+    Route::put('/member/{member}/edit', [MemberController::class, 'update'])->name('member.update');
+    Route::delete('/member/{member}', [MemberController::class, 'destroy'])->name('member.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
