@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bookshelfs', function (Blueprint $table) {
+        Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->integer('code')->unique();
             $table->string('name');
+            $table->date('event_date')->nullable();
+            $table->string('agency');
+            $table->string('phone');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookshelfs');
+        Schema::dropIfExists('visits');
     }
 };
