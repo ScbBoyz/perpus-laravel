@@ -17,10 +17,17 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'profiles_id',
         'name',
         'email',
         'password',
     ];
+
+    // Relasi One To One
+    public function userProfile()
+    {
+        return $this->belongsTo(UserProfile::class, 'profiles_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

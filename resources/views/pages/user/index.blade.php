@@ -25,10 +25,22 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                         <tr>
                             <th class="px-6 py-3">
+                                No
+                            </th>
+                            <th class="px-6 py-3">
+                                Nip
+                            </th>
+                            <th class="px-6 py-3">
                                 Nama
                             </th>
                             <th class="px-6 py-3">
                                 Email
+                            </th>
+                            <th class="px-6 py-3">
+                                Phone
+                            </th>
+                            <th class="px-6 py-3">
+                                Address
                             </th>
                             <th class="px-6 py-3">
                                 Tanggal Dibuat
@@ -43,10 +55,23 @@
                             <tr class="bg-white border-b">
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $loop->iteration }}
+                                </th>
+                                <td class="px-6 py-4">
+                                    {{ $user->userProfile->nip ?? 'N/A' }}
+                                </td>
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $user->name }}
                                 </th>
                                 <td class="px-6 py-4">
                                     {{ $user->email }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->userProfile->phone ?? 'N/A' }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->userProfile->address ?? 'N/A' }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $user->created_at }}

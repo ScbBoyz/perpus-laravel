@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,14 +24,27 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nip' => ['required'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'phone' => ['required'],
+            'address' => ['required'],
             'password' => ['required', 'confirmed'],
         ]);
 
+        $profile = UserProfile::create([
+            'nip' => $request->nip,
+            'address' => $request->address,
+            'phone' => $request->phone,
+        ]);
+
         $user = User::create([
+            'profiles_id' => $profile->id,
+            'nip' => $profile->nip,
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $profile->phone,
+            'address' => $profile->address,
             'password' => Hash::make($request->password),
         ]);
 
@@ -41,14 +55,27 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
+            'nip' => ['required'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class.',email,'.$user->id],
-            'password' => ['nullable', 'confirmed'],
+            'phone' => ['required'],
+            'address' => ['required'],
+            'password' => ['required', 'confirmed'],
+        ]);
+
+        $profile = UserProfile::create([
+            'nip' => $request->nip,
+            'address' => $request->address,
+            'phone' => $request->phone,
         ]);
 
         $user->update([
+            'profiles_id' => $profile->id,
+            'nip' => $profile->nip,
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $profile->phone,
+            'address' => $profile->address,
             'password' =>$request->password ? Hash::make($request->password) : $user->password,
         ]);
 
