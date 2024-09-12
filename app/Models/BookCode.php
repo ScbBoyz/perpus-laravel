@@ -5,21 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class BookCode extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'book_code_id',
-        'title',
-        'description',
-        'year',
-        'publisher',
+        'code',
     ];
 
     // Relasi One To One
-    public function bookCode()
+    public function book()
     {
-        return $this->belongsTo(BookCode::class);
+        return $this->hasOne(Book::class);
     }
 }
