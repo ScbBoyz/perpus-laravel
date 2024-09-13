@@ -29,6 +29,9 @@
                                     No
                                 </th>
                                 <th class="px-6 py-3">
+                                    Brand
+                                </th>
+                                <th class="px-6 py-3">
                                     Name
                                 </th>
                                 <th class="px-6 py-3">
@@ -48,6 +51,10 @@
                                     <th scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $loop->iteration }}
+                                    </th>
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $facilities->brand->name ?? 'N/A' }}
                                     </th>
                                     <th scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
