@@ -29,6 +29,11 @@ class User extends Authenticatable
         return $this->belongsTo(UserProfile::class, 'profiles_id');
     }
 
+    public function Position()
+    {
+        return $this->hasOne(Position::class, 'position_id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

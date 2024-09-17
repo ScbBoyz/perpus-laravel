@@ -33,6 +33,13 @@
                         @csrf
                         @method('PUT')
                         <div class="mb-5">
+                            <label for="position_name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Position</label>
+                            <input type="text" name="position_name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                placeholder="Masukkan Position" required autocomplete="off"/>
+                        </div>
+                        <div class="mb-5">
                             <label for="nip"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nip</label>
                             <input type="text" name="nip"
@@ -46,7 +53,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Masukkan Nama" required autocomplete="off"/>
                         </div>
-                        <div class="mt-5">
+                        <div class="mb-5">
                         <label for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                             <input type="email" name="email"

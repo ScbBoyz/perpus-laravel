@@ -28,6 +28,9 @@
                                 No
                             </th>
                             <th class="px-6 py-3">
+                                Position
+                            </th>
+                            <th class="px-6 py-3">
                                 Nip
                             </th>
                             <th class="px-6 py-3">
@@ -57,6 +60,9 @@
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $loop->iteration }}
                                 </th>
+                                <td class="px-6 py-4">
+                                    {{ $user->userProfile->position->position_name ?? 'N/A' }}
+                                </td>
                                 <td class="px-6 py-4">
                                     {{ $user->userProfile->nip ?? 'N/A' }}
                                 </td>

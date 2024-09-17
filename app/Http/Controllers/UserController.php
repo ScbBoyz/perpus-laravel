@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Position;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -32,7 +33,12 @@ class UserController extends Controller
             'password' => ['required', 'confirmed'],
         ]);
 
+        $position = Position::create([
+            'position_name' => $request->position_name
+        ]);
+
         $profile = UserProfile::create([
+            'position_id' => $position->id,
             'nip' => $request->nip,
             'address' => $request->address,
             'phone' => $request->phone,
@@ -63,7 +69,12 @@ class UserController extends Controller
             'password' => ['required', 'confirmed'],
         ]);
 
+        $position = Position::create([
+            'position_name' => $request->position_name
+        ]);
+
         $profile = UserProfile::create([
+            'position_id' => $position->id,
             'nip' => $request->nip,
             'address' => $request->address,
             'phone' => $request->phone,

@@ -10,6 +10,7 @@ class UserProfile extends Model
     use HasFactory;
 
     protected $fillable = [
+        'position_id',
         'nip',
         'address',
         'phone',
@@ -18,5 +19,10 @@ class UserProfile extends Model
     public function User()
     {
         return $this->hasOne(User::class);
+    }
+
+    public function Position()
+    {
+        return $this->belongsTo(Position::class);
     }
 }
