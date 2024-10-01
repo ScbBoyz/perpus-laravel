@@ -32,8 +32,14 @@
                     <form action="{{ route('categories.store') }}" method="POST" class="max-w-sm mx-auto">
                         @csrf
                         <div class="mb-5">
-                            <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                            <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Type</label>
+                            <input type="text" name="type"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                placeholder="Masukkan Type" required autocomplete="off"/>
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
                             <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Masukkan Name" required autocomplete="off"/>

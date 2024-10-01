@@ -29,7 +29,13 @@
                                     No
                                 </th>
                                 <th class="px-6 py-3">
-                                    Name
+                                    Type
+                                </th>
+                                <th class="px-6 py-3">
+                                    Title
+                                </th>
+                                <th class="px-6 py-3">
+                                    Book Name
                                 </th>
                                 <th class="px-6 py-3">
                                     Tanggal Dibuat
@@ -40,23 +46,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $categories)
+                            @foreach ($categories as $category)
                                 <tr class="bg-white border-b">
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $loop->iteration }}
                                     </th>
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $categories->name }}
-                                    </th>
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $categories->created_at }}
-                                    </th>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $category->type }}
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $category->name }}
+                                    </td>
+                                    <td>
+                                        @foreach ($category->books as $book)
+                                        {{ $loop->iteration }} {{ $book->title }} <br>
+                                        @endforeach
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $category->created_at }}
+                                    </td>
                                     <td class="px-6 py-4">
-                                        <a href="{{ route('categories.edit', $categories->id) }}" class="text-blue-950 hover:underline">Edit</a>
-                                        <form action="{{ route('categories.destroy', $categories->id) }}" method="POST" class="inline">
+                                        <a href="{{ route('categories.edit', $category->id) }}" class="text-blue-950 hover:underline">Edit</a>
+                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="text-red-500 hover:underline">Hapus</button>
