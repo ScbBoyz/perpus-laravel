@@ -43,10 +43,12 @@ class CategoriesController extends Controller
     {
         $request->validate([
             'type' => ['required'],
+            'name' => ['required'],
         ]);
 
         $categories->update([
             'type' => $request->type,
+            'name' => $request->name,
         ]);
 
         session()->flash('success', 'Categories updated successfully');
