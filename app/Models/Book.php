@@ -16,12 +16,17 @@ class Book extends Model
         'year',
         'publisher',
         'category_id',
+        'book_shelf_id',
     ];
 
-    // Relasi One To One
     public function category()
     {
         return $this->belongsTo(Categories::class);
+    }
+
+    public function bookshelf()
+    {
+        return $this->belongsTo(Bookshelfs::class, 'book_shelf_id');
     }
 
     public function bookCode()

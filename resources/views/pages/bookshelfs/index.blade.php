@@ -35,6 +35,9 @@
                                     Name
                                 </th>
                                 <th class="px-6 py-3">
+                                    Book Name
+                                </th>
+                                <th class="px-6 py-3">
                                     Tanggal Dibuat
                                 </th>
                                 <th class="px-6 py-3">
@@ -57,6 +60,11 @@
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $bookshelfs->name }}
                                     </th>
+                                    <td>
+                                        @foreach ($bookshelfs->books as $book)
+                                        {{ $loop->iteration }} {{ $book->title }} <br>
+                                        @endforeach
+                                    </td>
                                     <th scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $bookshelfs->created_at }}

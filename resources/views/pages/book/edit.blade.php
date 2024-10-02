@@ -64,6 +64,21 @@
                         </div>
 
                         <div class="mb-5">
+                            <label for="book_shelf_id" class="block mb-2 text-sm font-medium text-gray-900">Rak Buku</label>
+                            <select class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="book_shelf_id" name="book_shelf_id" required>
+                                <option value="">Pilih Rak Buku</option>
+                                @foreach($bookshelfs as $shelf)
+                                    <option value="{{ $shelf->id }}" {{ old('book_shelf_id') == $shelf->id ? 'selected' : '' }}>
+                                        {{ $shelf->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('book_shelf_id')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-5">
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                             <input type="text" name="description" value="{{ $book->description }}"
